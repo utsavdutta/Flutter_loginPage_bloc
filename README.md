@@ -1,4 +1,4 @@
-# Flutter LoginScreen implemented via bloc and Rxdart
+# Flutter LoginScreen implemented with bloc and Rxdart
 
 Made with Flutter/Dart.
 bloc architecture with Rxdar.
