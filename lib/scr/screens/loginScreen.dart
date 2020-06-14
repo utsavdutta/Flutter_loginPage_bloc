@@ -8,9 +8,17 @@ class LoginScreen extends StatelessWidget {
     final bloc = Provider.of(context);
     return Container(
       margin:EdgeInsets.all(20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [emailField(bloc), passwordField(bloc), submitButton(bloc)],
+      child: Center(
+        child: Container(
+          padding:EdgeInsets.all(20),
+          color: Colors.black87,
+          height: 300,
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [emailField(bloc), passwordField(bloc), submitButton(bloc)],
+          ),
+        ),
       ),
     );
   }

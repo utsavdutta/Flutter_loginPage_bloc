@@ -7,9 +7,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provider(
       child: MaterialApp(
+        theme: ThemeData.dark(),
         title: 'Login Screens',
-        home: Scaffold(
-          body: LoginScreen(),
+        home: SafeArea(
+          child: Scaffold(
+            backgroundColor: Colors.white70,
+            appBar: AppBar(title: Text('Enter Credentials'),
+              backgroundColor: Colors.black,
+            ),
+            body: LoginScreen(),
+          ),
         ),
       ),
     );
