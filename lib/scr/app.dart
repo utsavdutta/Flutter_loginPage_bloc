@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'blocs/provider.dart';
 import 'screens/loginScreen.dart';
+import 'blocs/bloc.dart';
+
 
 class App extends StatelessWidget {
   @override
@@ -12,9 +14,7 @@ class App extends StatelessWidget {
         home: SafeArea(
           child: Scaffold(
             backgroundColor: Colors.white70,
-            appBar: AppBar(title: Text('Enter Credentials'),
-              backgroundColor: Colors.black,
-            ),
+            appBar: AppBar(title: Text('sign in'),backgroundColor: Colors.black,),
             body: LoginScreen(),
           ),
         ),
@@ -22,3 +22,4 @@ class App extends StatelessWidget {
     );
   }
 }
+

@@ -6,20 +6,25 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = Provider.of(context);
-    return Container(
-      margin:EdgeInsets.all(20),
-      child: Center(
-        child: Container(
-          padding:EdgeInsets.all(20),
-          color: Colors.black87,
-          height: 300,
-          width: 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [emailField(bloc), passwordField(bloc), submitButton(bloc)],
+    return StreamBuilder(
+      stream: bloc.submitValid,
+      builder: (context, snapshot){
+        return Container(
+          color: !snapshot.hasData? Colors.red : Colors.green,
+          child: Center(
+            child: Container(
+              padding:EdgeInsets.all(20),
+              color: Colors.black,
+              height: 300,
+              width: 300,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [emailField(bloc), passwordField(bloc), submitButton(bloc)],
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 
