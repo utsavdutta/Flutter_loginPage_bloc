@@ -10,7 +10,7 @@ class LoginScreen extends StatelessWidget {
       margin:EdgeInsets.all(20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [emailField(bloc), passwordField(bloc), submitButton()],
+        children: [emailField(bloc), passwordField(bloc), submitButton(bloc)],
       ),
     );
   }
@@ -46,10 +46,15 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget submitButton() {
-    return RaisedButton(
-      onPressed: () {},
-      child: Text('Submit'),
+  Widget submitButton(Bloc bloc) {
+    return StreamBuilder(
+      stream: bloc.submitValid,
+      builder: (context, snapshot){
+        return RaisedButton(
+          onPressed: snapshot.hasData? (){} :null,
+          child: Text('Submit'),
+        );
+      },
     );
   }
 }
